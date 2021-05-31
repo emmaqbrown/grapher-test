@@ -68,15 +68,19 @@ def choose_colors(num):
         of that color. 
     '''
     colors = []
-
-    red = randint(0, 256)
-    green = randint(0, 256)
-    blue = randint(0, 256)
+    
+    
+    red = randint(0, 255)
+    green = randint(0, 255)
+    blue = randint(0, 255)
 
     for i in range(num):
-        a = uniform(0, 1)
+        red += 25
+        green += 25
+        blue += 50
+
         
-        colors.append('rgba({}, {}, {},{})'.format(red,green,blue,a))
+        colors.append('rgb({}, {}, {})'.format(red,green,blue))
 
     return colors
  
