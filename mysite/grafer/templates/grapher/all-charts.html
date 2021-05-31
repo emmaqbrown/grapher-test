@@ -1,0 +1,21 @@
+{% extends "grapher/base.html" %}
+{% block content %}
+
+
+<ul class="list-group">
+    {% for chart in charts %}
+
+    <li class="list-group-item">
+
+        <h5 class="mb-1">{{ chart }}</h5>
+      
+        <a href="{% url 'pie-chart' pk=chart.title %}"><button type="button" class="btn btn-outline-secondary btn-sm">Pie Chart</button>
+        </a>
+        <a href="{% url 'bar-chart' pk=chart.title %}"><button type="button" class="btn btn-outline-secondary btn-sm">Bar Chart</button>
+        </a>
+
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

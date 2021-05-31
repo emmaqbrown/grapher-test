@@ -1,13 +1,12 @@
 {% extends "grapher/base.html" %}
 
-
 {% block content %}
 
 
 {% load crispy_forms_tags %}
 
 <div class="container" id="form-container">
-    <form method="post">
+    <form method="POST">
         {% csrf_token %}
         {{ form|crispy }}
     

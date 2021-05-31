@@ -3,12 +3,11 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    # path('', views.GraphView.as_view(), name='graph'),
-    # path('chart/', views.charts, name='charts'),
-    path('', views.ChartForm.as_view(), name='home'),
+    path('', views.AllCharts.as_view(), name='all-charts'),
+    path('chart-form', views.ChartForm.as_view(), name='chart-form'),
     path('category-form/', views.CategoryForm.as_view(), name='category-form'),
 
-    path('pie-chart/', views.pie_chart, name='pie-chart'),
-    path('bar-chart/', views.bar_chart, name='bar-chart'),
+    path('pie-chart/<str:pk>/', views.pie_chart, name='pie-chart'),
+    path('bar-chart/<str:pk>/', views.bar_chart, name='bar-chart'),
 
 ]
